@@ -13,7 +13,7 @@ float[] ay = new float[num];
 
 void setup() 
 {
-  size(640, 360);
+  size(200, 200);
   for(int i = 0; i < num; i++) {
     ax[i] = width/2;
     ay[i] = height/2;

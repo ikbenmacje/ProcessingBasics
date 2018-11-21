@@ -40,6 +40,8 @@ There are a bilion online Processing resources but here is a small list to get y
 * https://www.openprocessing.org/ _huge online processing community mostly P5js_
 * https://www.youtube.com/user/shiffman _Video turotials for Processing and P5js_
 * https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/ _25 Processing tips and tricks_
+* https://github.com/Nagasaki45/intro-to-code-workshop _Intro to code workshop files_
+* https://github.com/mantissa/PaintingWithBitmaps _Painting with bitmaps workshop files_
 * http://www.supercolony.co/ _365 day generative art challenge_
 * http://fyprocessing.tumblr.com/ _Processing Tumblr blog_
 * https://beesandbombs.tumblr.com/ _Generative/Processing Tumblr blog_

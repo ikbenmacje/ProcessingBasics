@@ -45,7 +45,7 @@ void draw() {
   float x = width * noise(noiseOffY * 0.5);
   float y = height * noise(noiseOffX * 0.5);
   
-  ellipse(x, y, 2, 2);
+  ellipse(x, y, 6, 6);
   
   // angle changes with time
   float angle = radians(frameCount);
@@ -57,8 +57,8 @@ void draw() {
   float rotateX = x + radius * cos(angle);
   float rotateY = y + radius * sin(angle);
   
-  stroke(255,15);
+  stroke(255,35);
   line(x, y, rotateX, rotateY);
-  ellipse(rotateX, rotateY, 1, 1);
+  ellipse(rotateX, rotateY, 3, 3);
   
 }
