@@ -30,35 +30,48 @@ float noiseOffY = 0;
 
 void setup(){
   size(500,500);
-  background(0);
+  background(255);
 }
 
 
 void draw() {
   
+  
+  fill(0);
+  
   // add a small increment to the offsets
   // (change these numbers and look at the visual results)
-  noiseOffX += 0.005;
-  noiseOffY += 0.003;
+  noiseOffX += 0.01; //0.005;
+  noiseOffY += 0.006; //0.003;
   
   // location of the ellipse
   float x = width * noise(noiseOffY * 0.5);
   float y = height * noise(noiseOffX * 0.5);
   
+  int border = 50;
+  x = map(noise(noiseOffX * 0.5),0,1,border,width-border);
+  y = map(noise(noiseOffY * 0.5),0,1,border,height-border);
+  
   ellipse(x, y, 6, 6);
   
   // angle changes with time
-  float angle = radians(frameCount);
+  float angle = radians(frameCount*2);
   
   // radius changes with noise
-  float radius = 100 * noise(noiseOffX);
+  float radius = 180 * noise(noiseOffX);
   
   // calculate positions at the rotation point
   float rotateX = x + radius * cos(angle);
   float rotateY = y + radius * sin(angle);
   
-  stroke(255,35);
+  stroke(0,35);
   line(x, y, rotateX, rotateY);
   ellipse(rotateX, rotateY, 3, 3);
   
+}
+
+void keyReleased(){
+  if(key == ' '){
+    saveFrame("######frame.jpg");
+  }
 }

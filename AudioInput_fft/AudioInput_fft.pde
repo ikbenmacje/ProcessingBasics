@@ -16,13 +16,14 @@ float[] sum = new float[bands];
 
 
 void setup() {
-  size(800, 600);
+  size(800, 600,FX2D );
   background(255);
 
   colorMode(HSB);
   // Create an Audio input and grab the 1st channel
   input = new AudioIn(this, 0);
-
+  
+  smooth(8);
   // Begin capturing the audio input
   input.start();
   // start() activates audio capture so that you can use it as
@@ -52,13 +53,13 @@ void draw() {
   // Perform the analysis
   fft.analyze();
 
-  for (int i = 0; i < bands/2; i++) {
+  for (int i = 0; i < bands/4; i++) {
     
     sum[i] += (fft.spectrum[i] - sum[i]) * smoothingFactor;
     float r = map(sum[i], 0, 0.2, 4, 600);
     println(i,fft.spectrum[i]);
     
-    int step = (width-40)/bands;
+    int step = (width-40)/(bands/4);
     int x = 20+ i*step;
     int y = height/2;
     
